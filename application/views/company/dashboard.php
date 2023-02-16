@@ -44,7 +44,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
 
                     <div class="row">
                         <div class="col-xl-4 col-md-6">
@@ -103,17 +102,15 @@
                                     </div>
                                 </div><!-- end card body -->
                             </div><!-- end card -->
-                        </div><!-- end col -->
-
-                        
-                    </div><!-- end row-->
+                        </div>
+                    </div>
 
 
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Applied Candidate</h4>
+                                    <h4 class="card-title">Job List</h4>
 
                                 </div>
                                 <div class="card-body">
@@ -122,11 +119,74 @@
                                         <thead>
                                             <tr>
                                                 <th>SN</th>
+                                                <th>job</th>
+                                                <th>Total Applicants</th>
+                                                <th>Reviewed by Hirbox</th>
+                                                <th>Resume Screening</th>
+                                                <th>HR Screening Call</th>
+                                                <th>Assessment Test</th>
+                                                <th>In-Person Interview</th>
+                                                <th>Link candidate to another job</th>
+                                                <th>Online Interview </th>
+                                                <th>Offer Stage</th>
+                                                <th>Background Check</th>
+                                                <th>Refernce Check</th>
+                                                <th>Offer</th>
+                                                <th>Hired</th>
+                                                <th>Hold</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td> </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td> </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Qualified Candidate</h4>
+
+                                </div>
+                                <div class="card-body">
+
+                                    <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>SN</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Applied For</th>
-                                                <th>Education Level</th>
+
                                                 <th>View Profile</th>
                                                 <th>Action</th>
                                             </tr>
@@ -147,15 +207,22 @@
                                                         <td><?= $candidate[0]['email'] ?></td>
                                                         <td><?= $candidate[0]['number'] ?></td>
                                                         <td><?= $job[0]['job_title'] ?></td>
-                                                        <td><?= $job[0]['edu_level'] ?></td>
+
                                                         <td><a href="<?= base_url('company/view_candidate_profile/' . $candidate[0]['candidate_id'] . '/' . url_title($candidate[0]['name'])) ?>">View Profile</a></td>
                                                         <td style="width: 100px">
-                                                            <a class="btn btn-success btn-sm edit mb-1" title="Edit">
-                                                                Hire
-                                                            </a>
-                                                            <a href="<?= base_url('company/reject_candidate/' . $get_company[0]['company_id'] . '/' . $candidate[0]['candidate_id'] . '/' . $job[0]['job_id'])  ?>" class="btn btn-danger btn-sm edit" title="Edit">
-                                                                Reject
-                                                            </a>
+                                                            <select class="form-control">
+                                                                <option value="1">Resume Screening</option>
+                                                                <option value="2">Screening Call</option>
+                                                                <option value="3">Assessment Test</option>
+                                                                <option value="4">In-Person Interview</option>
+                                                                <option value="5">Link candidate to another job</option>
+                                                                <option value="6">Online Interview</option>
+                                                                <option value="7">Make an Offer</option>
+                                                                <option value="8">Background Check</option>
+                                                                <option value="9">Reference Check</option>
+                                                            </select>
+
+                                                            <button type="submit">Save</button>
 
                                                         </td>
 
@@ -166,7 +233,7 @@
                                             }
                                             ?>
 
-                                            
+
 
 
                                         </tbody>
@@ -177,25 +244,18 @@
                         </div> <!-- end col -->
                     </div>
 
+
+
+
                 </div>
-                <!-- container-fluid -->
             </div>
-            <!-- End Page-content -->
 
             <?php include 'includes/footer.php'; ?>
         </div>
-        <!-- end main content-->
 
     </div>
-    <!-- END layout-wrapper -->
-
-
-
-
-    <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
-    <!-- JAVASCRIPT -->
     <?php include 'includes/footerlink.php'; ?>
 
 </body>

@@ -10,15 +10,10 @@
     <link rel="shortcut icon" href="<?= base_url() ?>assets/images/hb-fav.png">
     <link rel="stylesheet" href="<?= base_url() ?>assets/candidate/libs/twitter-bootstrap-wizard/prettify.css">
 
-    <!-- preloader css -->
-    <!-- <link rel="stylesheet" href="<?= base_url() ?>assets/candidate/css/preloader.min.css" type="text/css" /> -->
-
-    <!-- Bootstrap Css -->
     <link href="<?= base_url() ?>assets/candidate/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="<?= base_url() ?>assets/candidate/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="<?= base_url() ?>assets/candidate/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>assets/candidate/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     <link href="<?= base_url() ?>assets/candidate/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
