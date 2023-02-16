@@ -7028,6 +7028,31 @@ body[data-layout-mode=dark] .pricing-table-bg {
     gap: 1rem;
 }
 
-.edit_aca_wrapper .modal{
-        background: rgba(0,0,0,0.6);
+.edit_aca_wrapper .modal {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+.input-group-text.facebook_wrap {
+    background: #3b5998 !important;
+}
+
+.input-group-text.linkedin_wrap {
+    background: #0072b1;
+}
+
+.input-group-text.twitter_wrap {
+    background: #1DA1F2 !important;
+}
+
+.input-group-text.google_wrap{
+    background-color: #db4a39;
+}
+
+.input-group-text.facebook_wrap i,
+.input-group-text.linkedin_wrap i,
+.input-group-text.twitter_wrap i,
+.input-group-text.google_wrap i {
+    color: #fff;
+    font-size: 18px;
 }

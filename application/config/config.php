@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// $config['base_url'] = 'http://localhost/hirbox/';
-$config['base_url'] = 'https://app.hirbox.com/';
+$config['base_url'] = 'http://localhost/hirbox/';
+// $config['base_url'] = 'https://app.hirbox.com/';
 
 $config['index_page'] = '';
 
