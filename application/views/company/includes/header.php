@@ -3,21 +3,21 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="<?= base_url('company') ?>" class="logo logo-dark">
+                <a href="<?= base_url() ?>" class="logo logo-dark">
                     <span class="logo-sm">
-                    <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" height="30">
+                        <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" width="150px">
                     </span>
                     <span class="logo-lg">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="" width="150px">
+                        <img src="<?= base_url() ?>assets/candidate/images/logo.png" alt="" width="150px">
                     </span>
                 </a>
 
-                <a href="<?= base_url('company') ?>" class="logo logo-light">
+                <a href="<?= base_url() ?>" class="logo logo-light">
                     <span class="logo-sm">
-                    <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" height="30">
+                        <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" width="45px">
                     </span>
                     <span class="logo-lg">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="" width="150px">
+                        <img src="<?= base_url() ?>assets/candidate/images/logo.png" alt="" width="150px">
                     </span>
                 </a>
             </div>
@@ -25,7 +25,6 @@
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
-
 
         </div>
 
@@ -64,7 +63,7 @@
                         }
                     }
                     ?>
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium"><?= sessionId('login_company_name') ?>    </span>
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium"><?= sessionId('login_company_name') ?> </span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
@@ -121,8 +120,8 @@
                         <span>Manage Team Members</span>
                     </a>
                 </li>
-                
-                
+
+
 
                 <li>
                     <a href="<?= base_url('post-a-job') ?>">
@@ -150,7 +149,7 @@
                 </li>
 
 
-<!-- 
+                <!-- 
                 <li class="disabled">
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="layers"></i>
