@@ -107,7 +107,7 @@
                                                     if (!empty($country_code)) {
                                                         foreach ($country_code as $crow) {
                                                     ?>
-                                                            <option value="<?= $crow['id'] ?>" <?= (($company[0]['country_code'] == $crow['id']) ? 'selected' : '') ?>><?= $crow['name'] ?> &nbsp; (+<?= $crow['phonecode'] ?>) </option>
+                                                            <option value="<?= $crow['phonecode'] ?>" <?= (($company[0]['country_code'] == $crow['id']) ? 'selected' : '') ?>><?= $crow['name'] ?> &nbsp; (+<?= $crow['phonecode'] ?>) </option>
                                                     <?php
                                                         }
                                                     }

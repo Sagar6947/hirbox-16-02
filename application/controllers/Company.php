@@ -125,6 +125,7 @@ class Company extends CI_Controller
         if (!$this->session->has_userdata('login_company_id')) {
             redirect(base_url('company/index'));
         }
+        $data['currency'] = $this->CommonModal->getAllrows('currency');
 
 
         if (count($_POST) > 0) {
@@ -239,6 +240,7 @@ class Company extends CI_Controller
 
     public function add_team()
     {
+        $data['country_code'] = $this->CommonModal->getAllRowsInOrder('country', 'name', 'asc');
         if (!$this->session->has_userdata('login_company_id')) {
             redirect(base_url('company/login'));
         }

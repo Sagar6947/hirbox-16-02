@@ -8,10 +8,6 @@
 
 
     <?php include 'includes/header.php'; ?>
-
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
     <div class="main-content">
 
         <div class="page-content">
@@ -137,69 +133,49 @@
 
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <div class="mb-3 col-md-6">
+                                            <div class="mb-3 col-md-4">
+
+
+                                                <select class="form-control currency" name="salary_currency" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+                                                    <option value="">Select</option>
+                                                    <?php
+                                                    if ($currency) {
+                                                        foreach ($currency as $cur) {
+                                                    ?>
+                                                            <option value="<?= $cur['c_id'] ?>" <?= (($candidate_detail[0]['salary_currency'] == $cur['c_id']) ? 'selected' : '') ?>><?= $cur['name'] ?>(<?= $cur['code'] ?>)</option>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </select>
+
+                                            </div>
+
+                                            <div class="mb-3 col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><span class="input-group-text" id="currencyid"></span></div>
+                                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="To" name="salary_to" value="<?= (($tag == 'Edit') ? $job['0']['salary_to'] : '') ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3 col-md-4">
                                                 <div class="input-group">
                                                     <div class="input-group-text">From</div>
                                                     <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="From" name="salary_from" value="<?= (($tag == 'Edit') ? $job['0']['salary_from'] : '') ?>">
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3 col-md-6">
-                                                <div class="input-group">
-                                                    <div class="input-group-text">To</div>
-                                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="To" name="salary_to" value="<?= (($tag == 'Edit') ? $job['0']['salary_to'] : '') ?>">
-                                                </div>
-                                            </div>
+
 
                                         </div>
 
                                     </div>
 
-                                    <!--<div class="col-md-12">-->
-                                    <!--    <div class="row">-->
-                                    <!--        <div class="mb-3">-->
-                                    <!-- <label class="control-label">Compensation</label> -->
-                                    <!--            <input id="price" name="compen_info" type="text" class="form-control" placeholder="Additional Compensation Information" name="compen_info" value="<?= (($tag == 'Edit') ? $job['0']['compen_info'] : '') ?>">-->
-                                    <!--        </div>-->
-
-                                    <!--    </div>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="row gx-3 gy-2 align-items-center mb-3">-->
-                                    <!--    <div class="col-sm-4">-->
-                                    <!--        <label class="visually-hidden" for="specificSizeInputName">Zip Code</label>-->
-                                    <!--        <input type="text" class="form-control" id="specificSizeInputName" placeholder="Zip Code" name="zipcode" value="<?= (($tag == 'Edit') ? $job['0']['zipcode'] : '') ?>">-->
-                                    <!--    </div>-->
-                                    <!--    <div class="col-auto">-->
-                                    <!--        <div class="form-check">-->
-                                    <!--            <input class="form-check-input" type="checkbox" id="autoSizingCheck2">-->
-                                    <!--            <label class="form-check-label" for="autoSizingCheck2">-->
-                                    <!--                Anywhere in US-->
-                                    <!--            </label>-->
-                                    <!--        </div>-->
-                                    <!--    </div>-->
-                                    <!--    <div class="col-sm-4">-->
-                                    <!--        <label class="visually-hidden" for="specificSizeInputGroupUsername">City</label>-->
-                                    <!--        <div class="input-group">-->
-                                    <!--            <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="City" name="city" value="<?= (($tag == 'Edit') ? $job['0']['city'] : '') ?>">-->
-                                    <!--        </div>-->
-                                    <!--    </div>-->
-
-                                    <!--</div>-->
-
-                                    <!--<div class="col-md-12">-->
-                                    <!--    <div class="row">-->
-                                    <!--        <div class="mb-3">-->
-                                    <!-- <label class="control-label">Compensation</label> -->
-                                    <!--            <input name="" type="text" class="form-control" placeholder="Additional Location Information" name="location_info" value="<?= (($tag == 'Edit') ? $job['0']['location_info'] : '') ?>">-->
-                                    <!--        </div>-->
-
-                                    <!--    </div>-->
-                                    <!--</div>-->
 
                                     <div class="col-md-12">
                                         <div class="row">
-                                        <div class="mb-3 col-md-4">
+                                            <div class="mb-3 col-md-4">
                                                 <label class="control-label">Country <span class="text-danger">*</span></label>
 
                                                 <input name="country" type="text" class="form-control" placeholder="Country" value="<?= (($tag == 'Edit') ? $job['0']['state'] : '') ?>">
@@ -220,7 +196,7 @@
                                                 <input name="state" type="text" class="form-control" placeholder="City" value="<?= (($tag == 'Edit') ? $job['0']['state'] : '') ?>">
 
                                             </div>
-                                            
+
                                         </div>
 
                                     </div>
@@ -283,95 +259,28 @@
 
 
 
-                                    <!--<div class="col-md-12">-->
-                                    <!--    <label class="control-label">Relocation Assistance</label>-->
-                                    <!--</div>-->
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light"><?= (($tag == 'Edit') ? 'Update job' : 'Save as Post') ?></button>
+                                        <!-- <button type="button" class="btn btn-secondary waves-effect waves-light">Save as Draft</button> -->
+                                        <button type="reset" class="btn btn-primary waves-effect waves-light">Cancel</button>
 
-                                    <!--<div class="col-md-12">-->
-                                    <!--    <div class="row">-->
-                                    <!--        <div class="mb-3 col-md-6">-->
-                                    <!--            <select class="form-control select2 form-select" name="relocation-assist">-->
-                                    <!--                <option>Select Relocation Assistance</option>-->
-                                    <!--                <option value="1" <?= (($job['0']['relocation-assist'] == '1') ? 'selected' : '') ?>>1</option>-->
-                                    <!--                <option value="2" <?= (($job['0']['relocation-assist'] == '2') ? 'selected' : '') ?>>2</option>-->
-                                    <!--            </select>-->
-                                    <!--        </div>-->
-
-                                    <!--        <div class="mb-3 col-md-6">-->
-                                    <!--            <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Additional Relocation Assistance Information" >-->
-                                    <!--        </div>-->
-
-                                    <!--    </div>-->
+                                    </div>
+                                </form>
 
                             </div>
-
-
-                            <!--<div class="col-md-12">-->
-                            <!--    <label class="control-label">Visa Requirment</label>-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-12">-->
-                            <!--    <div class="row">-->
-                            <!--        <div class="mb-3 col-md-6">-->
-                            <!--            <select class="form-control select2 form-select" name="visa_requirement">-->
-                            <!--                <option>Select Visa Requirment</option>-->
-                            <!--                <option value="1" <?= (($job['0']['visa_requirement'] == '1') ? 'selected' : '') ?>>1</option>-->
-                            <!--                <option value="2" <?= (($job['0']['visa_requirement'] == '1') ? 'selected' : '') ?>>2</option>-->
-                            <!--            </select>-->
-                            <!--        </div>-->
-
-                            <!--        <div class="mb-3 col-md-6">-->
-                            <!--            <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Additional Information" name="">-->
-                            <!--        </div>-->
-
-                            <!--    </div>-->
-
-                            <!--</div>-->
-
-                            <!--<div class="col-md-12 mb-3">-->
-                            <!--    <label class="control-label">Pre Screen Questionnaire</label>-->
-                            <!--    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Add a Question" name="pre_screen_ques" value="<?= (($tag == 'Edit') ? $job['0']['pre_screen_ques'] : '') ?>">-->
-                            <!--</div>-->
-
-
-
-                            <div class="d-flex flex-wrap gap-2">
-                                <button type="submit" class="btn btn-primary waves-effect waves-light"><?= (($tag == 'Edit') ? 'Update job' : 'Save as Post') ?></button>
-                                <!-- <button type="button" class="btn btn-secondary waves-effect waves-light">Save as Draft</button> -->
-                                <button type="reset" class="btn btn-primary waves-effect waves-light">Cancel</button>
-
-                            </div>
-                            </form>
-
                         </div>
+
+
                     </div>
-
-
                 </div>
-            </div>
-            <!-- end row -->
+                <!-- end row -->
 
-        </div> <!-- container-fluid -->
+            </div> <!-- container-fluid -->
+        </div>
+        <?php include 'includes/footer.php'; ?>
     </div>
-    <!-- End Page-content -->
-
-
-    <?php include 'includes/footer.php'; ?>
-</div>
-<!-- end main content-->
-
-
-
-
-
 
 </div>
-<!-- END layout-wrapper -->
-
-
-
-
-<!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
 
 <?php include 'includes/footerlink.php'; ?>
