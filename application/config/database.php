@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$active_group = 'server';
+$active_group = 'local';
 $query_builder = TRUE;
 
 $db['local'] = array(
@@ -9,7 +9,7 @@ $db['local'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'hirbox_new',
+	'database' => 'hirbox',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'tbl_',
 	'pconnect' => FALSE,
