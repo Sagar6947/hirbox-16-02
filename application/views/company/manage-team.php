@@ -71,7 +71,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
-                                            <th>Pasword</th>
+                                            <th>Password</th>
                                             <th>Add As</th>
                                             <th>Access</th>
                                             <th>Action</th>

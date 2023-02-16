@@ -7033,26 +7033,3 @@ body[data-layout-mode=dark] .pricing-table-bg {
 }
 
 
-.input-group-text.facebook_wrap {
-    background: #3b5998 !important;
-}
-
-.input-group-text.linkedin_wrap {
-    background: #0072b1;
-}
-
-.input-group-text.twitter_wrap {
-    background: #1DA1F2 !important;
-}
-
-.input-group-text.google_wrap{
-    background-color: #db4a39;
-}
-
-.input-group-text.facebook_wrap i,
-.input-group-text.linkedin_wrap i,
-.input-group-text.twitter_wrap i,
-.input-group-text.google_wrap i {
-    color: #fff;
-    font-size: 18px;
-}

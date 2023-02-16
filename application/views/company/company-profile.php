@@ -53,7 +53,7 @@
                                 <form method="POST" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="mb-3">
+                                            <div class="mb-4">
                                                 <label for="title">Company Name</label>
                                                 <input id="productname" name="company_name" type="text" class="form-control" placeholder="Company Name" value="<?= $company[0]['company_name'] ?>" required>
                                             </div>
@@ -121,7 +121,7 @@
                                             <div class="mb-3">
                                                 <label class="control-label">Industry</label>
                                                 <div class="form-floating form-floating-custom mb-3">
-                                                    <select class="form-control" name="country_code" required data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+                                                    <select class="form-control industry" name="industry" required data-trigger id="choices-single-default" placeholder="This is a search placeholder">
 
                                                         <option selected disabled>Select Indsutry</option>
 
@@ -129,7 +129,7 @@
                                                         if (!empty($industry)) {
                                                             foreach ($industry as $ind) {
                                                         ?>
-                                                                <option value="<?= $ind['cate_id'] ?>"><?= $ind['category'] ?></option>
+                                                                <option value="<?= $ind['cate_id'] ?>" <?= (($company[0]['industry'] == $ind['cate_id']) ? 'selected' : '') ?>><?= $ind['category'] ?></option>
 
                                                         <?php
                                                             }
@@ -138,9 +138,18 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 align-items-center gap-3" id="other_industry">
+                                                <label for="basicpill-firstname-input " class="control-label" style="min-width: max-content;">*
+                                                    Mention Industry</label>
+                                                <input type="text" name="other_industry" class="form-control txtPlaces is_require is_require" id="" value="<?= $company[0]['other_industry'] ?>">
+                                            </div>
+                                            <!-- <div class="mb-3">
                                                 <label for="productdesc">Website Url </label>
                                                 <input id="price" name="website_url" type="text" class="form-control" placeholder="https://abc.com" value="<?= (($company != '') ? $company['0']['website_url'] : '') ?>">
+                                            </div> -->
+                                            <div class="mb-3">
+                                                <label for="productdesc">Email Address </label>
+                                                <input id="price" name="email" type="text" class="form-control" placeholder="Email" value="<?= $company[0]['email'] ?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="productdesc">Contact Person Last Name </label>
@@ -218,10 +227,10 @@
                                                         <div class="card">
                                                             <div class="card-header">
                                                                 <h4 class="card-title">About Company</h4>
-                                                                <!-- <p class="card-title-desc">Example of Ckeditor Classic editor</p> -->
+
                                                             </div>
                                                             <div class="card-body">
-                                                                <textarea name="about_company" id="ckeditor-classic"><?= (($company != '') ? $company['0']['about_company'] : '') ?></textarea>
+                                                                <textarea name="about_company" id="editor"><?= (($company != '') ? $company['0']['about_company'] : '') ?></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -252,25 +261,6 @@
                                                         <input type="text" class="form-control" id="specificSizeInputGroupUsername" name="zipcode" placeholder="Zip Code" value="<?= (($company != '') ? $company['0']['zipcode'] : '') ?>">
                                                     </div>
                                                 </div>
-
-                                                <div class="mb-3 col-md-6">
-                                                    <div class="input-group">
-                                                        <div class="input-group-text">City</div>
-                                                        <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="City" name="city" value="<?= (($company != '') ? $company['0']['city'] : '') ?>">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="mb-3 col-md-6">
-                                                    <div class="input-group">
-                                                        <div class="input-group-text">State</div>
-                                                        <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="State" name="state" value="<?= (($company != '') ? $company['0']['state'] : '') ?>">
-                                                    </div>
-                                                </div>
-
                                                 <div class="mb-3 col-md-6">
                                                     <div class="input-group">
                                                         <div class="input-group-text">Country</div>
@@ -279,8 +269,9 @@
                                                 </div>
 
                                             </div>
-
                                         </div>
+
+
 
                                         <div class="card-header">
                                             <h4 class="card-title">Links to Social Media</h4>
@@ -290,41 +281,22 @@
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <div class="input-group">
-                                                        <div class="input-group-text facebook_wrap"> <i class="fab fa-facebook"></i> </div>
-                                                        <input type="text" class="form-control" name="facebook" placeholder="Profile Link" value="<?= (($company != '') ? $company['0']['facebook'] : '') ?>">
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3 col-md-6">
-                                                    <div class="input-group">
                                                         <div class="input-group-text linkedin_wrap"> <i class="fab fa-linkedin"></i> </div>
                                                         <input type="text" class="form-control" name="linkedin" placeholder="Profile Link" value="<?= (($company != '') ? $company['0']['linkedin'] : '') ?>">
                                                     </div>
                                                 </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <div class="input-group">
-                                                        <div class="input-group-text twitter_wrap"><i class="fab fa-twitter"></i></div>
-                                                        <input type="text" class="form-control" name="twitter" placeholder="Profile Link" value="<?= (($company != '') ? $company['0']['twitter'] : '') ?>">
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3 col-md-6">
-                                                    <div class="input-group">
-                                                        <div class="input-group-text google_wrap"> <i class="fab fa-google-plus"> </i> </div>
-                                                        <input type="text" class="form-control" name="googleplus" placeholder="Profile Link" value="<?= (($company != '') ? $company['0']['googleplus'] : '') ?>">
+                                                        <div class="input-group-text website_wrap"> <i class="fas fa-globe"></i> </div>
+                                                        <input type="text" class="form-control" name="linkedin" placeholder="Website Url" value="<?= (($company != '') ? $company['0']['website_url'] : '') ?>">
                                                     </div>
                                                 </div>
 
                                             </div>
 
                                         </div>
+
+
 
 
 
@@ -367,6 +339,25 @@
 <div class="rightbar-overlay"></div>
 
 <?php include 'includes/footerlink.php'; ?>
+
+
+<script>
+    $(document).ready(function() {
+        $('#other_industry').hide();
+        $('.industry').change(function() {
+            var industry = $(this).val();
+            console.log(industry);
+            if (industry == '118') {
+                $('#other_industry').show();
+                $(".is_require").attr("required", "true");
+            } else {
+                $('#other_industry').hide();
+                $(".is_require").attr("required", "false");
+                $('#other_indystry').removeClass('d-flex');
+            }
+        });
+    });
+</script>
 
 <script>
     $('input').attr('autocomplete', 'off');

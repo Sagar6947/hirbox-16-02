@@ -105,7 +105,7 @@
                             </div><!-- end card -->
                         </div><!-- end col -->
 
-                        
+
                     </div><!-- end row-->
 
 
@@ -150,12 +150,14 @@
                                                         <td><?= $job[0]['edu_level'] ?></td>
                                                         <td><a href="<?= base_url('company/view_candidate_profile/' . $candidate[0]['candidate_id'] . '/' . url_title($candidate[0]['name'])) ?>">View Profile</a></td>
                                                         <td style="width: 100px">
-                                                            <a class="btn btn-success btn-sm edit mb-1" title="Edit">
-                                                                Hire
-                                                            </a>
-                                                            <a href="<?= base_url('company/reject_candidate/' . $get_company[0]['company_id'] . '/' . $candidate[0]['candidate_id'] . '/' . $job[0]['job_id'])  ?>" class="btn btn-danger btn-sm edit" title="Edit">
+
+                                                        <select id="appliedCandidateStatus">
+                                                            <option value="">Sagar</option>
+                                                        </select>
+                                                            
+                                                            <!-- <a href="<?= base_url('company/reject_candidate/' . $get_company[0]['company_id'] . '/' . $candidate[0]['candidate_id'] . '/' . $job[0]['job_id'])  ?>" class="btn btn-danger btn-sm edit" title="Edit">
                                                                 Reject
-                                                            </a>
+                                                            </a> -->
 
                                                         </td>
 
@@ -166,7 +168,7 @@
                                             }
                                             ?>
 
-                                            
+
 
 
                                         </tbody>

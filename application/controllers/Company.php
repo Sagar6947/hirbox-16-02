@@ -142,6 +142,7 @@ class Company extends CI_Controller
 
         $data['tag'] = 'Add';
         $data['state_list'] = $this->CommonModal->getAllRows('tbl_state');
+        $data['industry'] = $this->CommonModal->getRowById('tbl_industries', 'category_status', '0');
         $data['title'] = "Add Job | Hirbox";
         $this->load->view('company/add-job', $data);
     }
@@ -196,7 +197,7 @@ class Company extends CI_Controller
             redirect(base_url('company/index'));
         }
 
-        $data['job'] = $this->CommonModal->getRowById('job_post', 'company_id', $this->session->has_userdata('login_company_id'));
+        $data['job'] = $this->CommonModal->getRowById('job_post', 'company_id', sessionId('login_company_id'));
         $data['title'] = "Job Posting Report | Hirbox";
         $this->load->view('company/view-post-job', $data);
     }
