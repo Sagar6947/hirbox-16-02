@@ -1,22 +1,9 @@
 <?php include 'includes/headerlink.php'; ?>
 
-
-
-<!-- <body data-layout="horizontal"> -->
-
-<!-- Begin page -->
 <div id="layout-wrapper">
 
 
     <?php include 'includes/header.php'; ?>
-
-
-
-
-
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
     <div class="main-content">
 
         <div class="page-content">
@@ -116,14 +103,9 @@
                             </div>
                         </div>
                     </div> <!-- end col -->
-                </div> <!-- end row -->
-
-
+                </div>
             </div> <!-- container-fluid -->
         </div>
-        <!-- End Page-content -->
-
-
         <?php include 'includes/footer.php'; ?>
 
     </div>

@@ -14,13 +14,36 @@
 
 <!-- form wizard init -->
 <script src="<?= base_url() ?>assets/candidate/js/pages/form-wizard.init.js"></script>
+<script src="<?= base_url() ?>assets/candidate/js/app.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/js/pages/form-advanced.init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="<?= base_url() ?>assets/candidate/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script src="<?= base_url() ?>assets/candidate/js/pages/form-editor.init.js"></script>
+
+
+<!-- Required datatable js -->
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<!-- Buttons examples -->
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/jszip/jszip.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/pdfmake/build/pdfmake.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/pdfmake/build/vfs_fonts.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+<!-- Responsive examples -->
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url() ?>assets/candidate/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+<!-- Datatable init js -->
+<script src="<?= base_url() ?>assets/candidate/js/pages/datatables.init.js"></script>
 
 <script src="<?= base_url() ?>assets/candidate/js/app.js"></script>
 
-<script src="<?= base_url() ?>assets/candidate/libs/choices.js/public/assets/scripts/choices.min.js"></script>
-
-<script src="<?= base_url() ?>assets/candidate/js/pages/form-advanced.init.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 <script>
     ClassicEditor
