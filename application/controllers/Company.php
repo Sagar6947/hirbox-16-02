@@ -97,7 +97,7 @@ class Company extends CI_Controller
             $contact = $this->input->post('number');
             $count_mobile = $this->CommonModal->getNumRows('company_registration', array('number' => $this->input->post('mobile')));
             $count_email = $this->CommonModal->getNumRows('company_registration', array('email' => $this->input->post('email')));
-            
+
             if ($count_mobile > 0 || $count_email > 0) {
                 $this->session->set_userdata('msg', '<h6 class="alert alert-danger">You have already registered with this email id or contact no.</h6>');
                 redirect(base_url('Company/register'));
@@ -125,6 +125,7 @@ class Company extends CI_Controller
         if (!$this->session->has_userdata('login_company_id')) {
             redirect(base_url('company/index'));
         }
+        $data['currency'] = $this->CommonModal->getAllrows('currency');
 
 
         if (count($_POST) > 0) {
@@ -142,6 +143,7 @@ class Company extends CI_Controller
 
         $data['tag'] = 'Add';
         $data['state_list'] = $this->CommonModal->getAllRows('tbl_state');
+        $data['industry'] = $this->CommonModal->getRowById('tbl_industries', 'category_status', '0');
         $data['title'] = "Add Job | Hirbox";
         $this->load->view('company/add-job', $data);
     }
@@ -196,7 +198,7 @@ class Company extends CI_Controller
             redirect(base_url('company/index'));
         }
 
-        $data['job'] = $this->CommonModal->getRowById('job_post', 'company_id', $this->session->has_userdata('login_company_id'));
+        $data['job'] = $this->CommonModal->getRowById('job_post', 'company_id', sessionId('login_company_id'));
         $data['title'] = "Job Posting Report | Hirbox";
         $this->load->view('company/view-post-job', $data);
     }
@@ -238,6 +240,7 @@ class Company extends CI_Controller
 
     public function add_team()
     {
+        $data['country_code'] = $this->CommonModal->getAllRowsInOrder('country', 'name', 'asc');
         if (!$this->session->has_userdata('login_company_id')) {
             redirect(base_url('company/login'));
         }
@@ -266,7 +269,7 @@ class Company extends CI_Controller
                     redirect(base_url('company/add-team-member'));
                 } else {
                     $this->session->set_userdata('msg', '<span class="alert alert-success">Somthing Went wrong ! please try again</span>');
-                    redirect(base_url('company/add-team')); 
+                    redirect(base_url('company/add-team'));
                 }
             }
         }
@@ -337,10 +340,10 @@ class Company extends CI_Controller
         $data['company'] = $this->CommonModal->getRowById('company_registration', 'company_id', sessionId('login_company_id'));
         $data['size'] = $this->CommonModal->getAllRows('tbl_size');
         $data['industry'] = $this->CommonModal->getRowById('tbl_industries', 'category_status', '0');
+        $data['country_code'] = $this->CommonModal->getAllRowsInOrder('country', 'name', 'asc');
 
         if (count($_POST) > 0) {
-            // print_r($_POST);
-            // exit();
+
             $post = $this->input->post();
             $uid = sessionId('login_company_id');
 
@@ -365,17 +368,14 @@ class Company extends CI_Controller
             }
 
             $insert = $this->CommonModal->updateRowById('company_registration', 'company_id', $uid, $post);
-            redirect(base_url() . 'company-profile');
-
 
             if ($insert) {
-                $this->session->set_flashdata('msg', 'Profile Update  successfully');
-                $this->session->set_flashdata('msg_class', 'alert-success');
+                $this->session->set_userdata('msg', '<span class="alert alert-success">Profile Update successfully.</span>');
+                redirect(base_url() . 'company-profile');
             } else {
-                $this->session->set_flashdata('msg', 'Profile Update  successfull');
-                $this->session->set_flashdata('msg_class', 'alert-success');
+                $this->session->set_userdata('msg', '<span class="alert alert-danger">Profile not update.</span>');
+                redirect(base_url() . 'company-profile');
             }
-            redirect(base_url() . 'my-profile');
         } else {
             $this->load->view('company/company-profile', $data);
         }

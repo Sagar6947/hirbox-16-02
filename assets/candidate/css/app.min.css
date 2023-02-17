@@ -7179,3 +7179,19 @@ input[type="radio"] {
 	padding: 10px;
 	color: red;
 }
+
+.input-group-text.linkedin_wrap {
+    background: #0072b1;
+}
+
+
+.input-group-text.website_wrap{
+    background-color: green;
+}
+
+
+.input-group-text.linkedin_wrap i,
+.input-group-text.website_wrap i {
+    color: #fff;
+    font-size: 18px;
+}

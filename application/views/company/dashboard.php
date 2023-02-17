@@ -1,265 +1,277 @@
-<!doctype html>
-<html lang="en">
+<?php include 'includes/headerlink.php'; ?>
+<div id="layout-wrapper">
+    <?php include 'includes/header.php'; ?>
+    <div class="main-content">
 
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">Job Information</h4>
 
-<head>
-
-    <meta charset="utf-8" />
-    <title><?= $title ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-
-    <?php include 'includes/headerlink.php'; ?>
-
-</head>
-
-<body data-topbar="dark">
-
-
-    <!-- Begin page -->
-    <div id="layout-wrapper">
-
-        <?php include 'includes/header.php'; ?>
-
-        <div class="main-content">
-
-            <div class="page-content">
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Welcome ! <?= sessionId('login_company_name') ?> </h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hirbox</a></li>
-                                        <li class="breadcrumb-item active">Company Dashboard</li>
-                                    </ol>
-                                </div>
-
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Hirbox</a></li>
+                                    <li class="breadcrumb-item active"><?= $tag ?> Job</li>
+                                </ol>
                             </div>
+
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-xl-4 col-md-6">
-                            <!-- card -->
-                            <div class="card card-h-100">
-                                <!-- card body -->
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Applicants</span>
-                                            <h4 class="mb-3 color-red">
-                                                <span class="counter-value" data-target="<?= $total_applicants ?>"><?= $total_applicants ?></span>
-                                            </h4>
-
-                                        </div>
-
-
-                                    </div>
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-
-                        <div class="col-xl-4 col-md-6">
-                            <!-- card -->
-                            <div class="card card-h-100">
-                                <!-- card body -->
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Jobs</span>
-                                            <h4 class="mb-3 color-red">
-                                                <span class="counter-value" data-target="<?= $total_jobs ?>"><?= $total_jobs ?></span>
-                                            </h4>
-
-                                        </div>
-
-                                    </div>
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col-->
-
-                        <div class="col-xl-4 col-md-6">
-                            <!-- card -->
-                            <div class="card card-h-100">
-                                <!-- card body -->
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-                                            <span class="text-muted mb-3 lh-1 d-block text-truncate">Team Members</span>
-                                            <h4 class="mb-3 color-red">
-                                                <span class="counter-value" data-target="<?= $total_members ?>"><?= $total_members ?></span>
-                                            </h4>
-
-                                        </div>
-
-                                    </div>
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Job List</h4>
-
-                                </div>
-                                <div class="card-body">
-
-                                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                        <thead>
-                                            <tr>
-                                                <th>SN</th>
-                                                <th>job</th>
-                                                <th>Total Applicants</th>
-                                                <th>Reviewed by Hirbox</th>
-                                                <th>Resume Screening</th>
-                                                <th>HR Screening Call</th>
-                                                <th>Assessment Test</th>
-                                                <th>In-Person Interview</th>
-                                                <th>Link candidate to another job</th>
-                                                <th>Online Interview </th>
-                                                <th>Offer Stage</th>
-                                                <th>Background Check</th>
-                                                <th>Refernce Check</th>
-                                                <th>Offer</th>
-                                                <th>Hired</th>
-                                                <th>Hold</th>
-                                            </tr>
-                                        </thead>
-
-
-                                        <tbody>
-
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td> </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td> </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-
-
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div> <!-- end col -->
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Qualified Candidate</h4>
-
-                                </div>
-                                <div class="card-body">
-
-                                    <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100">
-                                        <thead>
-                                            <tr>
-                                                <th>SN</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Applied For</th>
-
-                                                <th>View Profile</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-
-
-                                        <tbody>
-
-                                            <?php
-                                            if (!empty($applied_candidate)) {
-                                                foreach ($applied_candidate as $row) {
-                                                    $candidate = getRowById('tbl_candidate_registration', 'candidate_id', $row['candidate_id']);
-                                                    $job = getRowById('tbl_job_post', 'job_id', $row['job_id']);
-                                            ?>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td><?= $candidate[0]['name'] ?></td>
-                                                        <td><?= $candidate[0]['email'] ?></td>
-                                                        <td><?= $candidate[0]['number'] ?></td>
-                                                        <td><?= $job[0]['job_title'] ?></td>
-
-                                                        <td><a href="<?= base_url('company/view_candidate_profile/' . $candidate[0]['candidate_id'] . '/' . url_title($candidate[0]['name'])) ?>">View Profile</a></td>
-                                                        <td style="width: 100px">
-                                                            <select class="form-control">
-                                                                <option value="1">Resume Screening</option>
-                                                                <option value="2">Screening Call</option>
-                                                                <option value="3">Assessment Test</option>
-                                                                <option value="4">In-Person Interview</option>
-                                                                <option value="5">Link candidate to another job</option>
-                                                                <option value="6">Online Interview</option>
-                                                                <option value="7">Make an Offer</option>
-                                                                <option value="8">Background Check</option>
-                                                                <option value="9">Reference Check</option>
-                                                            </select>
-
-                                                            <button type="submit">Save</button>
-
-                                                        </td>
-
-                                                    </tr>
-
-                                            <?php
-                                                }
-                                            }
-                                            ?>
-
-
-
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div> <!-- end col -->
-                    </div>
-
-
-
-
                 </div>
-            </div>
+                 <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><?= $tag ?> a Job</h4>
+                                <p class="card-title-desc">Fill all information below</p>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                if ($this->session->has_userdata('msg')) {
+                                    echo $this->session->userdata('msg');
+                                    $this->session->unset_userdata('msg');
+                                }
+                                ?>
+                                <form method="POST">
+                                    <!--<input type="hidden" name="company_id" value="<?= sessionId('login_company_id') ?>">-->
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="mb-3">
+                                                <label for="title">Job Title <span class="text-danger">*</span></label>
+                                                <input id="productname" name="job_title" type="text" class="form-control" value="<?= (($tag == 'Edit') ? $job['0']['job_title'] : '') ?>" placeholder="Job Title" required>
+                                            </div>
 
-            <?php include 'includes/footer.php'; ?>
+                                            <div class="mb-3">
+                                                <label class="control-label">Industry</label>
+                                                <div class="form-floating form-floating-custom mb-3">
+                                                    <select class="form-control" name="industry" required data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+
+                                                        <option selected disabled>Select Indsutry</option>
+
+                                                        <?php
+                                                        if (!empty($industry)) {
+                                                            foreach ($industry as $ind) {
+                                                        ?>
+                                                                <option value="<?= $ind['cate_id'] ?>"><?= $ind['category'] ?></option>
+
+                                                        <?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="control-label">Education Level</label>
+                                                <select class="form-control select2 form-select" name="edu_level">
+                                                    <option>Select Education Level</option>
+                                                    <option value="High School" <?= (($job['0']['edu_level'] == '1') ? 'selected' : '') ?>>High School</option>
+                                                    <option value="Graduation" <?= (($job['0']['edu_level'] == '2') ? 'selected' : '') ?>>Graduation</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="mb-3">
+                                                <label for="productdesc">Total Number of Vacancies </label>
+                                                <input id="price" name="num_of_position" type="text" class="form-control" value="<?= (($tag == 'Edit') ? $job['0']['num_of_position'] : '') ?>" placeholder="Total Nomber of Positions ">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="control-label">Job Type</label>
+
+                                                <select class="form-control select2 form-select" name="job_type">
+                                                    <option disabled>Select Job Type</option>
+                                                    <option value="0">Full Time</option>
+                                                    <option value="1">Part Time</option>
+                                                    <option value="2">Freelancer</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="control-label">Exprience Level</label>
+
+                                                <select class="form-control select2 form-select" name="exprience">
+                                                    <option value="Fresher">Fresher</option>
+                                                    <option value="1 year">1 Year Exprienced</option>
+                                                    <option value="3 year">3 Year Exprienced</option>
+                                                </select>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <label class="control-label">Salary Package <span class="text-danger">*</span></label>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="mb-3 col-md-4">
+
+
+                                                <select class="form-control currency" name="salary_currency" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+                                                    <option value="">Select</option>
+                                                    <?php
+                                                    if ($currency) {
+                                                        foreach ($currency as $cur) {
+                                                    ?>
+                                                            <option value="<?= $cur['c_id'] ?>" <?= (($candidate_detail[0]['salary_currency'] == $cur['c_id']) ? 'selected' : '') ?>><?= $cur['name'] ?>(<?= $cur['code'] ?>)</option>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </select>
+
+                                            </div>
+
+                                            <div class="mb-3 col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><span class="input-group-text" id="currencyid"></span></div>
+                                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="To" name="salary_to" value="<?= (($tag == 'Edit') ? $job['0']['salary_to'] : '') ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3 col-md-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-text">From</div>
+                                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="From" name="salary_from" value="<?= (($tag == 'Edit') ? $job['0']['salary_from'] : '') ?>">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="mb-3 col-md-4">
+                                                <label class="control-label">Country <span class="text-danger">*</span></label>
+
+                                                <input name="country" type="text" class="form-control" placeholder="Country" value="<?= (($tag == 'Edit') ? $job['0']['state'] : '') ?>">
+
+                                            </div>
+                                            <div class="mb-3 col-md-4">
+
+                                                <label class="control-label">State <span class="text-danger">*</span></label>
+                                                <input name="state" type="text" class="form-control" placeholder="State" value="<?= (($tag == 'Edit') ? $job['0']['state'] : '') ?>">
+
+                                            </div>
+
+
+
+                                            <div class="mb-3 col-md-4">
+                                                <label class="control-label">City <span class="text-danger">*</span></label>
+
+                                                <input name="state" type="text" class="form-control" placeholder="City" value="<?= (($tag == 'Edit') ? $job['0']['state'] : '') ?>">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <label class="control-label">Your Organization's Job Order Number</label>
+                                                <input name="" type="number" class="form-control" placeholder="Your Organization's Job Order Number" name="order_no" value="<?= (($tag == 'Edit') ? $job['0']['order_no'] : '') ?>">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <!-- <label class="control-label">Job Description</label> -->
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h4 class="card-title">Job Description</h4>
+                                                            <!-- <p class="card-title-desc">Example of Ckeditor Classic editor</p> -->
+                                                        </div>
+                                                        <div class="">
+                                                            <textarea name="job_description" id="editor"><?= (($tag == 'Edit') ? $job['0']['job_description'] : '') ?></textarea>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="control-label">Skills</label>
+                                                <input type="text" class="form-control" placeholder="Enter Multiple Skills" name="skills" value="<?= (($tag == 'Edit') ? $job['0']['skills'] : '') ?>">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="control-label">Last apply date</label>
+                                                <input name="last_apply_date" type="date" class="form-control" placeholder="Enter Multiple Skills" name="skills" value="<?= (($tag == 'Edit') ? $job['0']['skills'] : '') ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="control-label">HR Name</label>
+                                                <input name="hr_name" type="text" class="form-control" placeholder="Enter HR name" name="hr_name" value="<?= (($tag == 'Edit') ? $job['0']['skills'] : '') ?>">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="control-label">HR Contact no.</label>
+                                                <input name="last_apply_date" type="tel" class="form-control" maxlength="10" placeholder="HR contact number" name="hr_contact" value="<?= (($tag == 'Edit') ? $job['0']['skills'] : '') ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light"><?= (($tag == 'Edit') ? 'Update job' : 'Save as Post') ?></button>
+                                        <button type="reset" class="btn btn-primary waves-effect waves-light">Cancel</button>
+
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> <!-- container-fluid -->
         </div>
-
+        <?php include 'includes/footer.php'; ?>
     </div>
-    <div class="rightbar-overlay"></div>
 
-    <?php include 'includes/footerlink.php'; ?>
+</div>
+
+<?php include 'includes/footerlink.php'; ?>
+
+<script>
+    $('input').attr('autocomplete', 'off');
+
+    $(function() {
+        $("input[name='hr_contact']").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+    });
+</script>
+
 
 </body>
-
-
 
 </html>
