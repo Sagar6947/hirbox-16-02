@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="<?= base_url() ?>assets/candidate/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url() ?>assets/candidate/libs/metismenu/metisMenu.min.js"></script>
-<!-- <script src="<?= base_url() ?>assets/candidate/libs/simplebar/simplebar.min.js"></script> -->
+<script src="<?= base_url() ?>assets/candidate/libs/simplebar/simplebar.min.js"></script>
 <script src="<?= base_url() ?>assets/candidate/libs/node-waves/waves.min.js"></script>
 <script src="<?= base_url() ?>assets/candidate/libs/feather-icons/feather.min.js"></script>
 <!-- pace js -->

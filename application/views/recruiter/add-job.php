@@ -6,26 +6,16 @@
 
     <meta charset="utf-8" />
     <title>Post a Jobs | Hirbox</title>
-
-
-
     <?php include 'includes/headerlink.php'; ?>
 
 </head>
 
 <body data-topbar="dark">
 
-    <!-- <body data-layout="horizontal"> -->
-
-    <!-- Begin page -->
     <div id="layout-wrapper">
 
 
         <?php include 'includes/header.php'; ?>
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
 
             <div class="page-content">
@@ -89,14 +79,7 @@
                                                         <option value="">Graduation</option>
                                                     </select>
                                                 </div>
-                                                <!-- <div class="mb-3">
-                                                    <label for="manufacturerbrand">Manufacturer Brand</label>
-                                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="price">Price</label>
-                                                    <input id="price" name="price" type="text" class="form-control">
-                                                </div> -->
+
                                             </div>
 
                                             <div class="col-sm-6">
@@ -310,7 +293,7 @@
                                                 </div>
 
                                                 <div class="mb-3 col-md-6">
-                                                <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Additional Relocation Assistance Information">
+                                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Additional Relocation Assistance Information">
                                                 </div>
 
                                             </div>
@@ -333,7 +316,7 @@
                                                 </div>
 
                                                 <div class="mb-3 col-md-6">
-                                                <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Additional Information">
+                                                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Additional Information">
                                                 </div>
 
                                             </div>
@@ -361,29 +344,14 @@
 
                         </div>
                     </div>
-                    <!-- end row -->
-
                 </div> <!-- container-fluid -->
             </div>
-            <!-- End Page-content -->
-
 
             <?php include 'includes/footer.php'; ?>
         </div>
-        <!-- end main content-->
-
-
-
-
-
 
     </div>
-    <!-- END layout-wrapper -->
 
-
-
-
-    <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
     <?php include 'includes/footerlink.php'; ?>

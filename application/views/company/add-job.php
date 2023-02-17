@@ -1,19 +1,15 @@
 <?php include 'includes/headerlink.php'; ?>
 
 
-<!-- <body data-layout="horizontal"> -->
-
-<!-- Begin page -->
 <div id="layout-wrapper">
 
 
     <?php include 'includes/header.php'; ?>
+
     <div class="main-content">
 
         <div class="page-content">
             <div class="container-fluid">
-
-                <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -29,9 +25,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- end page title -->
-
-                <div class="row">
+                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
@@ -82,15 +76,6 @@
                                                     <option value="Graduation" <?= (($job['0']['edu_level'] == '2') ? 'selected' : '') ?>>Graduation</option>
                                                 </select>
                                             </div>
-                                            <!-- <div class="mb-3">
-                                                    <label for="manufacturerbrand">Manufacturer Brand</label>
-                                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="price">Price</label>
-                                                    <input id="price" name="price" type="text" class="form-control">
-                                                </div> -->
-
 
                                         </div>
 
@@ -261,7 +246,6 @@
 
                                     <div class="d-flex flex-wrap gap-2">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light"><?= (($tag == 'Edit') ? 'Update job' : 'Save as Post') ?></button>
-                                        <!-- <button type="button" class="btn btn-secondary waves-effect waves-light">Save as Draft</button> -->
                                         <button type="reset" class="btn btn-primary waves-effect waves-light">Cancel</button>
 
                                     </div>
@@ -273,19 +257,14 @@
 
                     </div>
                 </div>
-                <!-- end row -->
-
             </div> <!-- container-fluid -->
         </div>
         <?php include 'includes/footer.php'; ?>
     </div>
 
 </div>
-<div class="rightbar-overlay"></div>
 
 <?php include 'includes/footerlink.php'; ?>
-
-<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 
 <script>
     $('input').attr('autocomplete', 'off');
@@ -297,39 +276,7 @@
     });
 </script>
 
-<script>
-    $(document).ready(function() {
-        load_defaults();
 
-        function load_defaults() {
-            var state = $('#state').val();
-            console.log("click");
-            $.ajax({
-                method: "POST",
-                url: "<?= base_url('company/getcity') ?>",
-                data: {
-                    state: state
-                },
-                success: function(response) {
-                    // console.log(response);
-                    $('#city').html(response);
-                }
-            });
-        }
-
-        $(document).on('change', '#state', function() {
-            load_defaults();
-        });
-    });
-</script>
-
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>
 </body>
 
 </html>
