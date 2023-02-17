@@ -136,7 +136,7 @@
 
                                             </div>
                                             <div class="mb-3">
-                                                <label class="control-label">Exprience Level</label>
+                                                <label class="control-label">Exprience Level ss</label>
 
                                                 <select class="form-control select2 form-select" name="exprience">
                                                     <option value="Fresher">Fresher</option>
